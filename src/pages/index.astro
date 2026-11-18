@@ -1,136 +1,54 @@
 ---
-import { supabase } from '../lib/supabase';
-
-const { data: cards, error } = await supabase
-  .from('cards')
-  .select('*')
-  .order('id', { ascending: false });
-
-if (error) {
-  console.error('Erro ao buscar cards:', error.message);
-}
+// Página temporária de manutenção
 ---
 
-<!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vitória Gramorelli | Portfólio & Estudos</title>
+    <meta charset="utf-8" />
+    <title>Em Manutenção - Vitória Gramorelli</title>
     <style>
-      :root {
-        --bg: #fafafa;
-        --card: #ffffff;
-        --text: #18181b;
-        --muted: #52525b;
-        --border: #e4e4e7;
-        --accent: #2563eb;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #09090b;
-          --card: #121215;
-          --text: #f4f4f5;
-          --muted: #a1a1aa;
-          --border: #27272a;
-          --accent: #60a5fa;
-        }
-      }
-
       body {
+        background-color: #0d1117;
+        color: #c9d1d9;
         font-family: system-ui, -apple-system, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        max-width: 680px;
-        margin: 0 auto;
-        padding: 3rem 1.25rem;
-      }
-
-      h1 {
-        font-size: 1.9rem;
-        margin-bottom: 0.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .bio {
-        color: var(--muted);
-        margin-bottom: 1.5rem;
-      }
-
-      .links {
         display: flex;
-        gap: 1rem;
-      }
-
-      .links a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .links a:hover {
-        text-decoration: underline;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 1.25rem;
-        margin-bottom: 1rem;
-      }
-
-      .card small {
-        color: var(--muted);
-        display: block;
-        margin-bottom: 0.25rem;
-      }
-
-      .card h3 {
-        margin: 0 0 0.4rem 0;
-        font-size: 1.05rem;
-      }
-
-      .card p {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 500px;
+      }
+      h1 {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #8b949e;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      .badge {
+        display: inline-block;
+        background: #238636;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        margin-top: 20px;
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Vitória Gramorelli</h1>
-      <p class="bio">
-        Analista de Qualidade (QA) e estudante de Ciência da Computação.
-        Documentando minha jornada de estudos e projetos em formato Build in Public.
-      </p>
-      <div class="links">
-        <a href="https://github.com/vitoriagramorelli" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/vitoriagramorelli/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </header>
-
-    <main>
-      <h2>Diário de Estudos</h2>
-
-      {cards && cards.length > 0 ? (
-        cards.map((card: any) => (
-          <article class="card">
-            <h3>{card.title}</h3>
-            <p>{card.content}</p>
-          </article>
-        ))
-      ) : (
-        <p style="color: var(--muted);">Nenhum registro encontrado ainda.</p>
-      )}
-    </main>
+    <div class="container">
+      <h1>🚧 Em Construção</h1>
+      <p>Estou estruturando e evoluindo as funcionalidades do meu portfólio. Em breve, novidades no ar!</p>
+      <div class="badge">Build in Public em andamento</div>
+    </div>
   </body>
 </html>
