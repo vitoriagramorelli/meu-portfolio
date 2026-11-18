@@ -1,16 +1,127 @@
 ---
+// Página inicial única - edite os textos abaixo livremente
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitória Gramorelli | Portfólio & Estudos</title>
+    <style>
+      :root {
+        --bg: #fafafa;
+        --card: #ffffff;
+        --text: #18181b;
+        --muted: #52525b;
+        --border: #e4e4e7;
+        --accent: #2563eb;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #09090b;
+          --card: #121215;
+          --text: #f4f4f5;
+          --muted: #a1a1aa;
+          --border: #27272a;
+          --accent: #60a5fa;
+        }
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .bio {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .card small {
+        color: var(--muted);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.4rem 0;
+        font-size: 1.05rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vitória Gramorelli</h1>
+      <p class="bio">
+        Analista de Qualidade (QA) e estudante de Ciência da Computação.
+        Documentando minha jornada de estudos e projetos em formato Build in Public.
+      </p>
+      <div class="links">
+        <a href="https://github.com/vitoriagramorelli" target="_blank" rel="noopener">GitHub</a>
+        <!-- Adicione seu LinkedIn abaixo quando quiser -->
+        <a href="https://www.linkedin.com/in/vitoriagramorelli/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>Diário de Estudos</h2>
+
+      <article class="card">
+        <small>Novembro 2026 • Desenvolvimento Web</small>
+        <h3>Coloquei meu portfólio no ar com Astro e Vercel</h3>
+        <p>
+          Configurei o repositório no GitHub e o deploy contínuo na Vercel para registrar minhas anotações de estudo.
+        </p>
+      </article>
+
+      <!-- Para adicionar um novo estudo, basta copiar e colar o bloco <article class="card"> acima -->
+    </main>
+  </body>
 </html>
