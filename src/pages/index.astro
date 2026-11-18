@@ -1,5 +1,14 @@
 ---
-// Página inicial única - edite os textos abaixo livremente
+import { supabase } from '../lib/supabase';
+
+const { data: cards, error } = await supabase
+  .from('cards')
+  .select('*')
+  .order('id', { ascending: false });
+
+if (error) {
+  console.error('Erro ao buscar cards:', error.message);
+}
 ---
 
 <!doctype html>
@@ -105,7 +114,6 @@
       </p>
       <div class="links">
         <a href="https://github.com/vitoriagramorelli" target="_blank" rel="noopener">GitHub</a>
-        <!-- Adicione seu LinkedIn abaixo quando quiser -->
         <a href="https://www.linkedin.com/in/vitoriagramorelli/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </header>
@@ -113,15 +121,16 @@
     <main>
       <h2>Diário de Estudos</h2>
 
-      <article class="card">
-        <small>Novembro 2026 • Desenvolvimento Web</small>
-        <h3>Coloquei meu portfólio no ar com Astro e Vercel</h3>
-        <p>
-          Configurei o repositório no GitHub e o deploy contínuo na Vercel para registrar minhas anotações de estudo.
-        </p>
-      </article>
-
-      <!-- Para adicionar um novo estudo, basta copiar e colar o bloco <article class="card"> acima -->
+      {cards && cards.length > 0 ? (
+        cards.map((card: any) => (
+          <article class="card">
+            <h3>{card.title}</h3>
+            <p>{card.content}</p>
+          </article>
+        ))
+      ) : (
+        <p style="color: var(--muted);">Nenhum registro encontrado ainda.</p>
+      )}
     </main>
   </body>
 </html>
